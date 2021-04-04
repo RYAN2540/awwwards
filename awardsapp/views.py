@@ -1,3 +1,6 @@
+import datetime as dt
 from django.shortcuts import render
 
-# Create your views here.
+def home(request):
+    date = dt.date.today()
+    return render(request, "home.html", {"date": date})
