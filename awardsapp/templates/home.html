@@ -6,151 +6,151 @@
 {% endblock %}
 
 {% block content %}
-<div class="of-the-day-wrapper">
-    <div class="col-md-2"></div>
-    <div class="col-md-8">
-        <div class="card mb-3">
+<div class="of-the-day-wrapper"
+    style="background-image: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/53148/deathtostock-00.jpg');">
+    <div class="of-the-day-wrapper-top">
+        <label>
+            Site of the day <span>{{date}}</span>
+        </label>
+    </div>
+    <div class="of-the-day-wrapper-bottom">
+        <div class="voters">
+            <img src="https://tinyfac.es/data/avatars/852EC6E1-347C-4187-9D42-DF264CCF17BF-200w.jpeg">
+            <img src="https://tinyfac.es/data/avatars/852EC6E1-347C-4187-9D42-DF264CCF17BF-200w.jpeg">
+            <img src="https://tinyfac.es/data/avatars/852EC6E1-347C-4187-9D42-DF264CCF17BF-200w.jpeg">
+        </div>
+    </div>
+</div>
+<!-- <div class="of-the-day-wrapper">
+	<div class="col-md-2"></div>
+	<div class="col-md-8">
+		<div class="card best-card mb-3">
 			<div class="cover">
-                <img src="https://images.unsplash.com/photo-1525543907410-b2562b6796d6?ixlib=rb-0.3.5&s=9ff8e5e718a6a40cbd0e1471235912f4&auto=format&fit=crop&w=3452&q=80"  alt="...">
-			<label class="bt-item bt-default">
-				Site of the day <span>{{date}}</span>
-			</label>
-            </div>
-            <div class="card-body text-center">
-                Vote now
-            </div>
-            <div class="card-footer">
-                <div class="footer-header flex-sm">
-                    <div class="card-title">Card title</div>
-                    <div><p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p></div>
+				<img src="https://images.unsplash.com/photo-1525543907410-b2562b6796d6?ixlib=rb-0.3.5&s=9ff8e5e718a6a40cbd0e1471235912f4&auto=format&fit=crop&w=3452&q=80"
+					class="landing-image" alt="landing-image">
+				<label>
+					Site of the day <span>{{date}}</span>
+				</label>
+			</div>
+			<div class="card-body text-left">
+				<div class="body-header flex-sm">
+					<div class="card-title">Card title</div>
+					<div>
+						<p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+					</div>
 
-                </div>
-                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content.
-                    This content is a little bit longer.</p>
-            </div>
-        </div>
-    <div class="col-md-2"></div>
-</div>
-<div class="of-the-day-wrapper">
-    <div class="col-md-2"></div>
-    <div class="col-md-8">
-        <div class="of-the-day">
-            <div class="cover">
-                <img src="https://1.bp.blogspot.com/-Y8H-0DWygcI/Uulo6hMuUNI/AAAAAAAALYA/xRbwoLi0qGc/s1600/unsplash_52d5bbef8a613_1.JPG"
-                    alt="best">
-                <label>
-                    <p>Site of the day <span>{{date}}</span></p>
-                </label>
-            </div>
-            <div class="info">
-                <div class="col-sm-2">
-                    <a href="#"><img src="{% static 'images/link.png' %}" alt=""></a>
-                </div>
-                <div class="col-sm-8">
-                    <div class="voters">
-                        <img src="https://tinyfac.es/data/avatars/852EC6E1-347C-4187-9D42-DF264CCF17BF-200w.jpeg" />
-                        <img src="https://tinyfac.es/data/avatars/A7299C8E-CEFC-47D9-939A-3C8CA0EA4D13-200w.jpeg" />
-                        <img src="https://tinyfac.es/data/avatars/AEF44435-B547-4B84-A2AE-887DFAEE6DDF-200w.jpeg" />
-                        <span>(+20)</span>
                     </div>
-                </div>
-                <div class="col-sm-2">
-                    <p>9.5</p>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="col-md-2"></div>
-</div>
+				<p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional
+					content.
+					This content is a little bit longer.</p>
+				<div class="voters">
+					<div><img src="https://tinyfac.es/data/avatars/852EC6E1-347C-4187-9D42-DF264CCF17BF-200w.jpeg"
+							width="34" height="34" style="border-radius: 50%;"></div>
+					<div><img src="https://tinyfac.es/data/avatars/852EC6E1-347C-4187-9D42-DF264CCF17BF-200w.jpeg" />
+					</div>
+					<div><img src="https://tinyfac.es/data/avatars/852EC6E1-347C-4187-9D42-DF264CCF17BF-200w.jpeg" />
+					</div>
+					<div><img src="https://tinyfac.es/data/avatars/852EC6E1-347C-4187-9D42-DF264CCF17BF-200w.jpeg" />
+					</div>
+					<span>(+20)</span>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="col-md-2"></div>
+</div> -->
 
-<div class="submissions-wrapper">
-    <div class="col-md-2"></div>
-    <div class="col-md-8 d-flex">
-        <div class="submission">
-    		<div class="card radius shadowDepth1">
-    			<div class="card__image border-tlr-radius">
-    				<img src="http://lorempixel.com/400/200/sports/" alt="image" class="border-tlr-radius">
-                </div>
-    			<div class="card__content card__padding">
-                    <div class="card__share">
-                        <a id="share" class="share-icon" href="#"><i class="fas fa-share"></i></a>
-                    </div>
-    				<div class="card__meta">
-    					<a href="#">Web Design</a>
-                        <time>17th March</time>
-    				</div>
-    				<article class="card__article">
-	    				<h3><a href="#">Material Design Card</a></h3>
-	    				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ducimus harum...</p>
-	    			</article>
-    			</div>
-    			<div class="card__action">    				
-    				<div class="card__author">
-    					<img src="http://lorempixel.com/40/40/sports/" alt="user">
-    					<div class="card__author-content">
-    						By <a href="#">John Doe</a>
-    					</div>
-    				</div>
-    			</div>
-    		</div>
-        </div>
-        <div class="submission">
-    		<div class="card radius shadowDepth1">
-    			<div class="card__image border-tlr-radius">
-    				<img src="http://lorempixel.com/400/200/sports/" alt="image" class="border-tlr-radius">
-                </div>
-    			<div class="card__content card__padding">
-                    <div class="card__share">
-                        <a id="share" class="share-icon" href="#"><i class="fas fa-share"></i></a>
-                    </div>
-    				<div class="card__meta">
-    					<a href="#">Web Design</a>
-                        <time>17th March</time>
-    				</div>
-    				<article class="card__article">
-	    				<h3><a href="#">Material Design Card</a></h3>
-	    				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ducimus harum...</p>
-	    			</article>
-    			</div>
-    			<div class="card__action">    				
-    				<div class="card__author">
-    					<img src="http://lorempixel.com/40/40/sports/" alt="user">
-    					<div class="card__author-content">
-    						By <a href="#">John Doe</a>
-    					</div>
-    				</div>
-    			</div>
-    		</div>
-        </div>
-        <div class="submission">
-    		<div class="card radius shadowDepth1">
-    			<div class="card__image border-tlr-radius">
-    				<img src="http://lorempixel.com/400/200/sports/" alt="image" class="border-tlr-radius">
-                </div>
-    			<div class="card__content card__padding">
-                    <div class="card__share">
-                        <a id="share" class="share-icon" href="#"><i class="fas fa-share"></i></a>
-                    </div>
-    				<div class="card__meta">
-    					<a href="#">Web Design</a>
-                        <time>17th March</time>
-    				</div>
-    				<article class="card__article">
-	    				<h3><a href="#">Material Design Card</a></h3>
-	    				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ducimus harum...</p>
-	    			</article>
-    			</div>
-    			<div class="card__action">    				
-    				<div class="card__author">
-    					<img src="http://lorempixel.com/40/40/sports/" alt="user">
-    					<div class="card__author-content">
-    						By <a href="#">John Doe</a>
-    					</div>
-    				</div>
-    			</div>
-    		</div>
-    	</div>
-    </div>
-    <div class="col-md-2"></div>
-</div>
+<!-- <div class="submissions-wrapper">
+	<div class="col-md-4">
+		<div class="card radius shadowDepth1">
+			<div class="card__image border-tlr-radius">
+				<img src="https://images.unsplash.com/photo-1525543907410-b2562b6796d6?ixlib=rb-0.3.5&s=9ff8e5e718a6a40cbd0e1471235912f4&auto=format&fit=crop&w=3452&q=80"
+					alt="image" class="border-tlr-radius">
+			</div>
+			<div class="card__content card__padding">
+				<div class="card__share">
+					<a id="share" class="share-icon" href="#"><i class="fas fa-share"></i></a>
+				</div>
+				<div class="card__meta">
+					<a href="#">Web Design</a>
+					<time>17th March</time>
+				</div>
+				<article class="card__article">
+					<h3><a href="#">Material Design Card</a></h3>
+					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ducimus harum...</p>
+				</article>
+			</div>
+			<div class="card__action">
+				<div class="card__author">
+					<img src="http://lorempixel.com/40/40/sports/" alt="user">
+					<div class="card__author-content">
+						By <a href="#">John Doe</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="col-md-4">
+		<div class="card radius shadowDepth1">
+			<div class="card__image border-tlr-radius">
+				<img src="https://images.unsplash.com/photo-1525543907410-b2562b6796d6?ixlib=rb-0.3.5&s=9ff8e5e718a6a40cbd0e1471235912f4&auto=format&fit=crop&w=3452&q=80"
+					alt="image" class="border-tlr-radius">
+			</div>
+			<div class="card__content card__padding">
+				<div class="card__share">
+					<a id="share" class="share-icon" href="#"><i class="fas fa-share"></i></a>
+				</div>
+				<div class="card__meta">
+					<a href="#">Web Design</a>
+					<time>17th March</time>
+				</div>
+				<article class="card__article">
+					<h3><a href="#">Material Design Card</a></h3>
+					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ducimus harum...</p>
+				</article>
+			</div>
+			<div class="card__action">
+				<div class="card__author">
+					<img src="http://lorempixel.com/40/40/sports/" alt="user">
+					<div class="card__author-content">
+						By <a href="#">John Doe</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="col-md-4">
+		<div class="card radius shadowDepth1">
+			<div class="card__image border-tlr-radius">
+				<img src="https://images.unsplash.com/photo-1525543907410-b2562b6796d6?ixlib=rb-0.3.5&s=9ff8e5e718a6a40cbd0e1471235912f4&auto=format&fit=crop&w=3452&q=80"
+					alt="image" class="border-tlr-radius">
+			</div>
+			<div class="card__content card__padding">
+				<div class="card__share">
+					<a id="share" class="share-icon" href="#"><i class="fas fa-share"></i></a>
+				</div>
+				<div class="card__meta">
+					<a href="#">Web Design</a>
+					<time>17th March</time>
+				</div>
+				<article class="card__article">
+					<h3><a href="#">Material Design Card</a></h3>
+					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ducimus harum...</p>
+				</article>
+			</div>
+			<div class="card__action">
+				<div class="card__author">
+					<img src="http://lorempixel.com/40/40/sports/" alt="user">
+					<div class="card__author-content">
+						By <a href="#">John Doe</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div> -->
+{% endblock %}
+{% block scripts %}
+{{ block.super}}
+<script src=" {% static 'js/card.js' %}"></script>
 {% endblock %}
