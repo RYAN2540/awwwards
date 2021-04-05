@@ -1,5 +1,11 @@
 .of-the-day-wrapper {
     position: relative;
+    margin-bottom: 10rem;
+}
+
+.col-md-8 {
+    padding-right: 5rem;
+    padding-left: 5rem;
 }
 
 .of-the-day {
@@ -10,12 +16,12 @@
 
 .of-the-day>.cover {
     position: relative;
-    height: 35rem;
     border-radius: 2px 2px 0 0;
 }
 
 .of-the-day>.cover>img {
     width: 100%;
+    height: 40rem;
     object-fit: cover;
 }
 
@@ -44,3 +50,25 @@
     flex-direction: row;
     overflow: hidden;
 }
+
+.of-the-day>.info a img {
+    width: 8rem;
+    object-fit: cover;
+    padding: 10%;
+}
+
+.voters img {
+    display: inline-block;
+    width: 4rem;
+    height: 4rem;
+    margin: 0 2px 0 0;
+    /* line-height: 32px; */
+    vertical-align: middle;
+    border-radius: 100%
+}
+
+.voters span {
+    margin: 0
+}
+
+/* SUBMISSIONS */

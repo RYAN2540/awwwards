@@ -5,7 +5,14 @@ body{
   font-family:"Roboto";
   background-color: #fff;
   font-size: 1.2rem;
-  padding-top: 10%; /* necessary for fixed navbar*/
+  padding-top: 8%; /* necessary for fixed navbar*/
+}
+
+*:after,
+*:before {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
 }
 
 .cd-header{
