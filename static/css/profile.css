@@ -9,10 +9,12 @@ body {
     font-size: 16px;
     text-align: center;
     transition: all 0.3s ease;
+    padding-top: 0 !important;
+
 }
-* {
+/* * {
     box-sizing: border-box;
-}
+} */
 main {
     --neutralShade1: #f2f2f2;
     --neutralShade2: #e8e9e9;
@@ -29,9 +31,8 @@ main {
 }
 /*overall layout*/
 main {
-    margin: 3em auto 8em;
+    margin: 22rem 2rem 7rem;
     color: var(--foregroundColor);
-    text-align: left;
 }
 .profile {
     position: relative;
@@ -61,11 +62,11 @@ main {
     text-align: center;
 }
 .profile-smallimg .profile__image {
-    margin-top: -40px;
+    margin-top: -10rem;
 }
 .profile-smallimg .profile__image img {
-    width: 120px;
-    height: 120px;
+    width: 20rem;
+    height: 20rem;
     border-radius: 50%;
     border: 5px solid var(--backgroundColor);
     box-shadow: 0 0 0 7px var(--secondaryColor);
