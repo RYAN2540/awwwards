@@ -1,94 +1,128 @@
 body {
-    padding-top: 8%;
+    padding-top: 7.2rem;
 }
 
 .of-the-day-wrapper {
+    width: 100%;
+    height: 70vh;
     position: relative;
-    margin-bottom: 10rem;
+    background: no-repeat center center/cover;
+    color: #fff;
 }
 
-.of-the-day-wrapper .best-card {
-    margin: 2rem 3rem;
+.of-the-day-wrapper::after {
+	content: '';
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	z-index: 1;
+    /* background: rgba(44, 42, 42, 0.6); */
+    /* background: rgba(0, 0, 0, 0.6); */
+    background: rgba(0, 0, 0, 0.678);
+    /* box-shadow: inset 120px 100px 250px #000000, inset -120px -100px 250px #000000; */
+    /* box-shadow: inset 20px 20px 100px #080808, inset -20px -20px 100px #080808; */
 }
 
-.of-the-day-wrapper .best-card .landing-image {
-    width: 120%;
-    margin-left: -10%;
-    object-fit: cover;
-}
-
-.cover {
+.of-the-day-wrapper-top{
     position: relative;
+    z-index: 2;
+}
+.of-the-day-wrapper-middle {
+    position: absolute;
+    top: 38%;
+    left: 18%;
+	z-index: 2;
+	width: 65%;
+	/* margin: auto; */
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+	/* margin-top: 9rem; */
 }
 
+.of-the-day-wrapper-middle h1 {
+	font-weight: 700;
+	font-size: 4.8rem;
+	line-height: 1.1;
+	margin: 0 0 2rem;
+}
+
+.of-the-day-wrapper-bottom{
+    position: absolute;
+    bottom: 2rem;
+    right: 2rem;
+}
 label {
     position: absolute;
-    top: 3%;
-    left: -8%;
-    padding: 0 1.5rem;
+    top: 4rem;
+    left: 2rem;
+    padding: 0 1rem;
     vertical-align: middle;
-    font-size: 1.2rem;
-    font-weight: 500;
+    font-size: 1.3rem;
+    font-weight: 900;
     color: #FFF;
-    border: 1px solid rgba(255, 255, 255, 0.5);
+    /* border: 1px solid rgba(255, 255, 255, 0.5); */
     min-width: 2.3rem;
-    letter-spacing: 1px;
-    line-height: 3.2rem;
+    letter-spacing: 0.2rem;
+    line-height: 3rem;
     text-align: center;
     border-radius: 5rem;
-    z-index: 99;
+    z-index: 2;
 }
 
 label>span {
     font-size: 1.4rem;
+    letter-spacing: 0.1rem;
     text-transform: uppercase;
-}
-
-.of-the-day-wrapper .card-body {
-    padding: 3%;
-    border: 1px solid black;
-}
-
-.of-the-day-wrapper .card-title {
-    color: darkgoldenrod;
-    font-size: 3rem;
-}
-
-.body-header {
-    display: flex;
-    justify-content: space-between;
-    align-content: center;
 }
 
 .voters {
     display: flex;
     align-items: center;
+    position: absolute;
+    bottom: 4rem;
+    right: 2rem;
+    padding-right: inherit;
+    z-index: 2;
 }
 
 .voters img {
-    width: 3rem;
-    height: 3rem;
-    margin-right: .8rem;
+    width: 5rem;
+    height: 5rem;
+    margin-right: 1.2rem;
     /* line-height: 5rem; */
     border-radius: 50%;
 }
 
-.voters span {
-    margin: 0
-}
-
-@media (max-width: 700px) {
-    .flex-sm {
-        display: flex;
-        flex-direction: column;
+@media (max-width: 425px) {
+    .of-the-day-wrapper {
+        width: 100%;
+        height: 35vh !important;
     }
 }
+
+/* DIVIDER */
+.divider{
+    padding: 3%;
+    font-size: 2.5rem;
+    font-weight: 900;
+}
+.divider span{
+    font-size: 1.8rem;
+    font-weight: 600;
+}
+
 
 /* SUBMISSIONS */
 @import 'https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css';
 @import 'https://fonts.googleapis.com/css?family=Roboto:700,400';
 .submissions-wrapper {
-    background-color: blue;
+    padding-left: 5%;
+    padding-right: 5%;
 }
 a {
     text-decoration: none;
@@ -145,6 +179,7 @@ h3 {
 .card {
     background-color: #fff;
     margin-bottom: 1.6rem;
+    z-index: -2;
 }
 
 .card__padding {
@@ -152,13 +187,14 @@ h3 {
 }
 
 .card__image {
-    min-height: 100px;
+    min-height: 8rem;
     background-color: #eee;
 }
 
 .card__image img {
     width: 100%;
     max-width: 100%;
+    height: 20rem;
     display: block;
 }
 

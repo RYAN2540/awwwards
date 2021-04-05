@@ -1,83 +1,92 @@
 body {
-    padding-top: 7.2rem;
+    padding-top: 7%;
 }
 
-.of-the-day-wrapper {
-    width: 100%;
-    height: 70vh;
-    position: relative;
-    background: no-repeat center center/cover;
+.profile {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    align-content: center;
+    justify-content: center;
 }
 
-.of-the-day-wrapper::after {
-	content: '';
-	position: absolute;
-	top: 0;
-	left: 0;
-	width: 100%;
-	height: 100%;
-	z-index: 1;
-    /* background: rgba(44, 42, 42, 0.6); */
-    /* background: rgba(0, 0, 0, 0.6); */
-    background: rgba(0, 0, 0, 0.507);
-    /* box-shadow: inset 120px 100px 250px #000000, inset -120px -100px 250px #000000; */
-    box-shadow: inset 20px 20px 100px #080808, inset -20px -20px 100px #080808;
+.profile-left {
+    width: 31%;
 }
 
-.of-the-day-wrapper-top{
-    position: relative;
-    z-index: 2;
+.profile-center {
+    width: 38%;
+    margin: 0 auto;
 }
 
-.of-the-day-wrapper-bottom{
-    position: absolute;
-    bottom: 2rem;
-    right: 2rem;
+.profile-right {
+    width: 31%;
+    display: flex;
+    justify-content: center;
+}
+
+img {
+    width: 9rem;
+    height: 9rem;
+    border-radius: 50%;
+    object-fit: cover;
+}
+.username{
+    font-weight: 900;
+    font-size: 2.5rem;
+    letter-spacing: .1rem;
+}
+.location{
+    font-size: 1.2rem;
+    margin-bottom: 3%;
+}
+.bio, .phone, .email{
+    font-size: 1.4rem;
+    margin-bottom: 2%;
+}
+.phone span, .email span{
+    font-size: 2.4rem;
+    font-weight: 700;
 }
 label {
-    position: absolute;
-    top: 4rem;
-    left: 2rem;
-    padding: 0 1rem;
+    padding: 0 1.3rem;
     vertical-align: middle;
     font-size: 1.3rem;
     font-weight: 900;
-    color: #FFF;
-    /* border: 1px solid rgba(255, 255, 255, 0.5); */
+    color: rgba(20, 16, 16, 0.5);
+    border: 1px solid rgba(20, 16, 16, 0.5);
     min-width: 2.3rem;
-    letter-spacing: 1px;
+    letter-spacing: 0.2rem;
     line-height: 3rem;
     text-align: center;
     border-radius: 5rem;
-    z-index: 2;
+    align-self: flex-start;
+    justify-self: flex-start;
 }
-
 label>span {
     font-size: 1.4rem;
+    letter-spacing: 0.1rem;
     text-transform: uppercase;
 }
-
-.voters {
+.count{
+    padding: 0 3% 3%;
     display: flex;
-    align-items: center;
-    position: absolute;
-    bottom: 4rem;
-    right: 2rem;
-    padding-right: inherit;
-    z-index: 2;
+    flex-direction: row;
 }
-
-.voters img {
-    width: 5rem;
-    height: 5rem;
-    margin-right: 1.2rem;
-    /* line-height: 5rem; */
-    border-radius: 50%;
+.projects{
+    font-size: 1.4rem;
+    font-weight: 800;
+    margin-right: 3%;
 }
-
+.votes{
+    font-size: 1.4rem;
+}
 @media (max-width: 425px) {
-    .of-the-day-wrapper {
+    .profile{
+        display: flex;
+        flex-direction: column;
+    }
+    .profile-left, .profile-center, .profile-right{
         width: 100%;
-        height: 40vh;
     }
 }

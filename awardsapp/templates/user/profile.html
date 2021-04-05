@@ -2,37 +2,32 @@
 {% load static %}
 {% block styles %}
 {{ block.super}}
-<link rel="stylesheet" href="{% static 'css/profile.css' %}">
+<link rel="stylesheet" href="{% static 'css/test.css' %}">
 {% endblock %}
 
 {% block content %}
+<div class="profile">
+    <div class="profile-left"></div>
+    <div class="profile-center text-center">
+        <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/567707/dog.png" alt="Doggo" class="profile-image">
+        <h3 class="username">Active Theory</h3>
+        <div class="text-muted location">United States - Los Angeles</div>
+        <div class="bio">Active Theory is a creative digital production studio with offices in Los Angeles and Amsterdam. We make bold things for the big guys.</div>
+        <div class="phone"><span><i class="fas fa-mobile-alt"></i></span>&nbsp;&nbsp;+254 706 814458</div>
+        <div class="email"><span><i class="fas fa-at"></i></span>&nbsp;&nbsp;ryandev8121@gmail.com</div>
+    </div>
+    <div class="profile-right">
+        <label><span>53</span> awards</label>
+    </div>
+</div>
+<hr>
+<div class="count">
+    <div class="projects">65 Projects</div>
+    <div class="votes">0 Votes</div>
+</div>
 <div class="row full-height">
     <div class="col-md-2"></div>
     <div class="col-md-8">
-        <main>
-            <section>
-                <div class="profile profile-smallimg">
-                    <div class="profile__image"><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/567707/dog.png" alt="Doggo" /></div>
-                    <div class="profile__info">
-                        <h3>Doggo Dogg</h3>
-                        <p class="profile__info__extra">A very good boi that loves playing fetch and ice-cream! Gentle with everyone. Scared of the rain.</p>
-                    </div>
-                    <div class="profile__stats">
-                        <p class="profile__stats__title">Type</p>
-                        <h5 class="profile__stats__info">Puppy</h5>
-                    </div>
-                    <div class="profile__stats">
-                        <p class="profile__stats__title">Size</p>
-                        <h5>Medium</h5>
-                    </div>
-                    <div class="profile__stats">
-                        <p class="profile__stats__title">Weight</p>
-                        <h5 class="profile__stats__info">45.85 lbs</h5>
-                    </div>
-                    <div class="profile__cta"><a class="button">Adopt Doggo!</a></div>
-                </div>
-            </section>
-        </main>
     </div>
     <div class="col-md-2"></div>
 </div>
