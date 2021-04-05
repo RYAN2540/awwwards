@@ -1,30 +1,42 @@
+@import url(https://fonts.googleapis.com/css?family=Roboto:400,100,300);
+
+body{
+  color:black;
+  font-family:"Roboto";
+  background-color: #fff;
+  font-size: 1.2rem;
+  padding-top: 10%; /* necessary for fixed navbar*/
+}
+
 .cd-header{
     position: fixed;
 	width:100%;
 	top:0;
 	left:0;
 	z-index:100;
+  background-color: #fff;
+  height: 7rem;
 } 
 .header-wrapper{
     position: relative;
-	width: calc(100% - 100px);
+	width: calc(100% - 10rem);
 } 
 .logo-wrap {
 	position: absolute;
 	display:block;
 	right:0;
-	top: 40px;
+	top: 4rem;
 	cursor: pointer;
 }
 .logo-wrap a {
 	cursor: pointer;
 	font-family: 'Montserrat', sans-serif;
 	font-weight: 900;
-	font-size: 20px;
-	line-height: 20px;
+	font-size: 2rem;
+	line-height: 2rem;
 	text-transform: uppercase;
-	letter-spacing: 2px;
-	color: #fff;
+	letter-spacing: 0.2rem;
+	color: black;
 	transition : all 0.3s ease-out;
 }
 .logo-wrap a span{ 
@@ -33,13 +45,7 @@
 .logo-wrap a:hover {
 	opacity: 0.9;
 }
-@import url(https://fonts.googleapis.com/css?family=Roboto:400,100,300);
 
-body{
-  background-color:#28363D;
-  font-family:"Roboto";
-  color: #fff;
-}
 .menu{
   position: fixed;
   top: 0;
@@ -47,14 +53,15 @@ body{
   bottom: 0;
   padding: 0;
   overflow: hidden;
+  color: #fff;
   background: #212121;
-  width: 250px;
+  width: 25rem;
   box-sizing: border-box;
   transition: all 250ms;
   -webkit-transform: translateZ(0) translateX(-100%);
   transform: translateZ(0) translateX(-100%);
   text-align:center;
-  box-shadow: 0 0 10px #000;
+  box-shadow: 0 0 1rem #000;
 }
 
 .active{
@@ -64,53 +71,169 @@ body{
   transition: 0.4s;
 }
 h1{
-  margin-top:150px;
+  margin-top:15rem;
 }
 ul{
   padding:0;
   list-style:none;
-  font-size:14px;
+  font-size:1.4rem;
 }
 li{
-  padding:7px 10px;
+  padding:0.7rem 1rem;
 }
-a{
+.menu a{
   text-decoration:none;
-  padding:10px 15px;
+  padding:1rem 1.5rem;
   color:#fff;
   font-family:"Roboto";
-  font-size: 18px;
+  font-size: 1.8rem;
   font-weight: 300;
 }
 
 .content{
   position:relative;
-  width:400px;
+  width:40rem;
 }
 .button{
-  width:50px;
-  height:50px;
-  margin:4rem 6.7rem;
-  padding: 10px;
+  width:6rem;
+  height:6rem;
+  /* margin:3rem 3rem; */
+  padding: 1rem;
   cursor:pointer;
+  position: relative;
 }
-.line{
-	width: 40px;
-	height: 2px;
-  background-color:#fff;
-	transition: transform 0.3s ease, background 0.3s ease, opacity 0.3s ease, top 0.3s ease;
+
+.nav-toggle {
+  top: 50%;
+  z-index: 1;
+  left: 50%;
+  width: 6rem;
+  height: 6rem;
+  border: none;
+  background: none;
+  position: absolute;
+  -webkit-appearence: none;
+  transform: translate(-50%, -50%);
 }
-.line.first{
-  transform: translateX(-10px) translateY(22px) rotate(-90deg);
+.nav-toggle:focus, .nav-toggle:active {
+  outline: none;
 }
-.line.second{
-  transform: translateX(-10px) translateY(19px) rotate(0deg);
+.nav-toggle .nav-label {
+  opacity: 1;
+  float: left;
+  display: none;
+  font-size: 1.4rem;
+  text-transform: uppercase;
 }
-.button.on .line.top{
-	width: 40px;
-	transform: translateX(-10px) translateY(20px) rotate(45deg);
+.nav-toggle.nav-open .nav-svg .dots {
+  left: 2.4rem;
+  opacity: 0;
+  background: rgba(255, 255, 255, 0);
+  animation: showDots 0.2s 0.2s forwards;
 }
-.button.on .line.bottom{
-	width: 40px;
-	transform: translateX(-10px) translateY(17px)rotate(-45deg);
+.nav-toggle.nav-open .nav-svg .dots:before {
+  animation: toCloseDotsTop 0.6s 0.2s forwards;
 }
+.nav-toggle.nav-open .nav-svg .dots:after {
+  animation: toCloseDotsBottom 0.6s 0.2s forwards;
+}
+.nav-toggle.nav-open .nav-svg path.x {
+  transition: all 0.2s 0.2s ease-in-out;
+  transform: rotate(45deg) translate(17%, -57%) scaleX(0.75);
+}
+.nav-toggle.nav-open .nav-svg path.x:first-of-type {
+  transform-origin: right center;
+  transform: rotate(-45deg) translate(-17%, -28%) scaleX(0.75);
+}
+.nav-toggle.nav-open .nav-svg path.yy {
+  stroke-dashoffset: -1200;
+  transition: 0.25s 0s ease-in-out;
+}
+.nav-toggle .nav-svg {
+  display: inline-block;
+  transform: translate(-0.1rem, 0.2rem);
+}
+.nav-toggle .nav-svg .dots {
+  top: 2.4rem;
+  left: 1rem;
+  width: 0.2rem;
+  height: 0.2rem;
+  border-radius: 50%;
+  background: black;
+  position: absolute;
+  transition: background 0.25s ease-out, left 0.25s ease-out;
+}
+.nav-toggle .nav-svg .dots:before, .nav-toggle .nav-svg .dots:after {
+  left: 0;
+  opacity: 1;
+  width: 0.2rem;
+  content: '';
+  height: 0.2rem;
+  border-radius: 50%;
+  background: black;
+  position: absolute;
+}
+.nav-toggle .nav-svg .dots:before {
+  top: -0.7rem;
+}
+.nav-toggle .nav-svg .dots:after {
+  top: 0.7rem;
+  transition-delay: 0.1s;
+}
+.nav-toggle .nav-svg path {
+  stroke: black;
+  stroke-width: 70;
+}
+.nav-toggle .nav-svg path.x {
+  transition: all 0.25s 0s ease-in-out;
+  transform-origin: left center;
+  transform: rotate(0deg) translate(0, 0) scale(1);
+}
+.nav-toggle .nav-svg path.yy {
+  stroke-dashoffset: 1700;
+  stroke-dasharray: 2520 3000;
+  transition: 0.2s 0.2s ease-in-out;
+}
+@keyframes showDots {
+  0% {
+      opacity: 0;
+ }
+  100% {
+      opacity: 1;
+ }
+}
+@keyframes toCloseDotsBottom {
+  from, 40%, 75%, to {
+      animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+ }
+  0% {
+      transform: translate3d(0, 0, 0);
+ }
+  40% {
+      transform: translate3d(0, 0.5rem, 0);
+ }
+  75% {
+      transform: translate3d(0, -0.3rem, 0);
+ }
+  to {
+      transform: none;
+ }
+}
+@keyframes toCloseDotsTop {
+  from, 40%, 75%, to {
+      animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+ }
+  0% {
+      transform: translate3d(0, 0, 0);
+ }
+  40% {
+      transform: translate3d(0, -0.5rem, 0);
+ }
+  75% {
+      transform: translate3d(0, 0.3rem, 0);
+ }
+  to {
+      transform: none;
+ }
+}
+

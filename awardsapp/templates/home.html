@@ -1,5 +1,42 @@
 {%extends 'base.html'%}
 {% load static %}
+{% block styles %}
+{{ block.super}}
+<link rel="stylesheet" href="{% static 'css/home.css' %}">
+{% endblock %}
+
 {% block content %}
-<h1>{{date}}</h1>
+<div class="of-the-day-wrapper">
+    <div class="col-sm-2"></div>
+    <div class="col-sm-8">
+        <div class="of-the-day">
+            <div class="cover">
+                <img src="https://1.bp.blogspot.com/-Y8H-0DWygcI/Uulo6hMuUNI/AAAAAAAALYA/xRbwoLi0qGc/s1600/unsplash_52d5bbef8a613_1.JPG"
+                    alt="best">
+                <label>
+                    <p>Site of the day <span>{{date}}</span></p>
+                </label>
+            </div>
+            <div class="info">
+                <div class="visit">
+                    <a href="#" class=".bt-item.bt-link">
+                        <svg class="ico-svg" viewBox="0 0 22.24 14">
+                            <use xlink:href="https://www.awwwards.com/assets/images/sprite-icons.svg#link"></use>
+                        </svg>
+                    </a>
+                </div>
+                <div class="content">
+                    <div class="voters">
+                        <img src="https://tinyfac.es/data/avatars/852EC6E1-347C-4187-9D42-DF264CCF17BF-200w.jpeg" />
+                        <img src="https://tinyfac.es/data/avatars/5F8C5D50-DDB6-4F06-AA15-ACB30D8D910D-200w.jpeg" />
+                        <img src="https://tinyfac.es/data/avatars/A7299C8E-CEFC-47D9-939A-3C8CA0EA4D13-200w.jpeg" />
+                        <img src="https://tinyfac.es/data/avatars/AEF44435-B547-4B84-A2AE-887DFAEE6DDF-200w.jpeg" />
+                        <span>(+20)</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-2"></div>
+</div>
 {% endblock %}

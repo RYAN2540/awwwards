@@ -1,0 +1,46 @@
+.of-the-day-wrapper {
+    position: relative;
+}
+
+.of-the-day {
+    position: relative;
+    border-radius: 2px;
+    box-shadow: 0 2px 15px rgba(0, 0, 0, .5);
+}
+
+.of-the-day>.cover {
+    position: relative;
+    height: 35rem;
+    border-radius: 2px 2px 0 0;
+}
+
+.of-the-day>.cover>img {
+    width: 100%;
+    object-fit: cover;
+}
+
+.of-the-day>.cover>label {
+    position: absolute;
+    top: 2.2rem;
+    left: -3.3rem;
+    height: 3.3rem;
+    padding: 0 3rem 0 4rem;
+    line-height: 3.3rem;
+    vertical-align: middle;
+    font-size: 1.2rem;
+    color: #FFF;
+    text-shadow: 0 1px 2px #000;
+    background: rgba(136, 86, 168, .6);
+}
+
+.of-the-day>.cover>label>p>span {
+    font-size: 1.4rem;
+    text-transform: uppercase;
+}
+
+.of-the-day>.info {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    overflow: hidden;
+}
