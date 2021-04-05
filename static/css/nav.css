@@ -104,16 +104,16 @@ li{
 .button{
   width:6rem;
   height:6rem;
-  /* margin:3rem 3rem; */
+  margin: 0 3rem 3rem;
   padding: 1rem;
   cursor:pointer;
   position: relative;
 }
 
 .nav-toggle {
-  top: 50%;
+  top: 5rem;
   z-index: 1;
-  left: 50%;
+  left: 9.3rem;
   width: 6rem;
   height: 6rem;
   border: none;
@@ -131,6 +131,10 @@ li{
   display: none;
   font-size: 1.4rem;
   text-transform: uppercase;
+}
+
+.nav-open path{
+  stroke: yellow !important;
 }
 .nav-toggle.nav-open .nav-svg .dots {
   left: 2.4rem;
@@ -169,6 +173,9 @@ li{
   background: black;
   position: absolute;
   transition: background 0.25s ease-out, left 0.25s ease-out;
+}
+.nav-open .nav-svg .dots:before, .nav-open .nav-svg .dots:after{
+  background: yellow !important;
 }
 .nav-toggle .nav-svg .dots:before, .nav-toggle .nav-svg .dots:after {
   left: 0;
