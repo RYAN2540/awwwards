@@ -21,8 +21,6 @@ class ProfileTestClass(TestCase):
         self.profile.edit_bio('I am cool')
         self.assertEqual(self.profile.bio, 'I am cool')
 
-
-
 class ProjectTestClass(TestCase):
     def setUp(self):
         self.ryan = User(username = "ryan", email = "ryan@gmail.com",password = "1234")

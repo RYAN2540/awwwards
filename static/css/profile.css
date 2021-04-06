@@ -1,5 +1,6 @@
 body {
     padding-top: 9%;
+    background: #f4f7f6;
 }
 
 .profile {
@@ -40,11 +41,11 @@ body {
     font-size: 1.2rem;
     margin-bottom: 3%;
 }
-.bio, .phone, .email{
+.bio, .email{
     font-size: 1.4rem;
     margin-bottom: 2%;
 }
-.phone span, .email span{
+.email span{
     font-size: 2.4rem;
     font-weight: 700;
 }

@@ -1,57 +1,48 @@
 body {
-    padding-top: 9%;
+    padding-top: 6%;
 }
 
-.profile {
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: row;
-    align-content: center;
-    justify-content: center;
-}
-
-.profile-left {
-    width: 31%;
-}
-
-.profile-center {
-    width: 38%;
-    margin: 0 auto;
-}
-
-.profile-right {
-    width: 31%;
-    display: flex;
-    justify-content: center;
-}
-
-.profile img {
-    width: 9rem;
-    height: 9rem;
-    border-radius: 50%;
+.image img {
+    width: 100%;
+    height: 65vh;
     object-fit: cover;
 }
-.username{
+
+.vote {
+    background-color: darkgoldenrod;
+    font-size: 1.8rem;
+    text-transform: uppercase;
+    padding: 2%;
     font-weight: 900;
-    font-size: 2.5rem;
-    letter-spacing: .1rem;
+    color: #fff;
 }
-.location{
-    font-size: 1.2rem;
-    margin-bottom: 3%;
+
+.details {
+    padding: 3%;
 }
-.bio, .phone, .email{
-    font-size: 1.4rem;
-    margin-bottom: 2%;
+
+.title {
+    font-size: 3.6rem;
+    font-weight: 900;
+    margin-bottom: 1%;
 }
-.phone span, .email span{
-    font-size: 2.4rem;
-    font-weight: 700;
+
+.description {
+    font-size: 1.6rem;
+    margin: 0 15% 2%;
 }
+
+.badges {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-content: center;
+}
+
 label {
     padding: 0 1.3rem;
     vertical-align: middle;
-    font-size: 1.3rem;
+    font-size: 1.5rem;
     font-weight: 900;
     color: rgba(20, 16, 16, 0.5);
     border: 1px solid rgba(20, 16, 16, 0.5);
@@ -63,187 +54,16 @@ label {
     align-self: flex-start;
     justify-self: flex-start;
 }
+
 label>span {
     font-size: 1.4rem;
     letter-spacing: 0.1rem;
-    text-transform: uppercase;
-}
-.count{
-    padding: 0 3% 3%;
-    display: flex;
-    flex-direction: row;
-}
-.projects{
-    font-size: 1.4rem;
-    font-weight: 800;
-    margin-right: 3%;
-}
-.votes{
-    font-size: 1.4rem;
-}
-
-.submissions-wrapper {
-    padding-left: 5%;
-    padding-right: 5%;
-}
-a {
-    text-decoration: none;
-    color: #3498db;
-}
-
-a:hover {
-    color: #2980b9;
-}
-
-h3 {
-    line-height: 1.2;
-    margin-bottom: 1.6rem;
-}
-
-.d-flex {
-    display: flex;
-}
-
-.submission {
-    max-width: 50%;
-    /* margin: 50px auto; */
-    padding-left: 1em;
-    padding-right: 1em;
-}
-
-/* Helpers*/
-.border-tlr-radius {
-    border-top-left-radius: 2px;
-    border-top-right-radius: 2px;
-}
-
-.radius {
-    border-radius: 2px;
-}
-
-.padding-tb {
-    padding-top: 1.6rem;
-    padding-bottom: 1.6rem;
-}
-
-.shadowDepth0 {
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12);
-}
-
-.shadowDepth1 {
-    box-shadow:
-        0 1px 3px rgba(0, 0, 0, 0.12),
-        0 1px 2px rgba(0, 0, 0, 0.24);
-}
-
-/* Card Styles*/
-
-.card {
-    background-color: #fff;
-    margin-bottom: 1.6rem;
-    z-index: -2;
-}
-
-.card__padding {
-    padding: 1.6rem;
-}
-
-.card__image {
-    min-height: 8rem;
-    background-color: #eee;
-}
-
-.card__image img {
-    width: 100%;
-    max-width: 100%;
-    height: 20rem ;
-    display: block;
-}
-
-.card__content {
-    position: relative;
-}
-
-/* card meta */
-.card__meta time {
-    font-size: 1.5rem;
-    color: #bbb;
-    margin-left: 0.8rem;
-}
-
-/* card article */
-.card__article a {
-    text-decoration: none;
-    color: #444;
-    transition: all 0.5s ease;
-}
-
-.card__article a:hover {
-    color: #2980b9;
-}
-
-/* card action */
-.card__action {
-    overflow: hidden;
-    padding-right: 1.6rem;
-    padding-left: 1.6rem;
-    padding-bottom: 1.6rem;
-}
-
-
-.card__author img,
-.card__author-content {
-    display: inline-block;
-    vertical-align: middle;
-}
-
-.card__author img {
-    border-radius: 50%;
-    margin-right: 0.6em;
-}
-
-.card__share {
-    float: right;
-    position: relative;
-    margin-top: -42px;
-}
-
-
-.share-icon {
-    display: inline-block;
-    width: 48px;
-    height: 48px;
-    line-height: 48px;
-    text-align: center;
-    border-radius: 50%;
-    background-color: #fff;
-    transition: all 0.3s ease;
-    outline: 0;
-
-    box-shadow:
-        0 2px 4px rgba(0, 0, 0, 0.12),
-        0 2px 4px rgba(0, 0, 0, 0.24);
-}
-
-.share-icon:hover,
-.share-icon:focus {
-    box-shadow:
-        0 3px 6px rgba(0, 0, 0, 0.12),
-        0 3px 6px rgba(0, 0, 0, 0.24);
-
-    -webkit-transform: scale(1.2);
-    -moz-transform: scale(1.2);
-    -ms-transform: scale(1.2);
-    -o-transform: scale(1.2);
-    transform: scale(1.2);
 }
 
 @media (max-width: 425px) {
-    .profile{
-        display: flex;
-        flex-direction: column;
-    }
-    .profile-left, .profile-center, .profile-right{
+    .image img {
         width: 100%;
+        height: 40vh;
+        object-fit: cover;
     }
 }
