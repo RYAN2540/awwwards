@@ -1,0 +1,18 @@
+{%extends 'base.html'%}
+{% load static %}
+{% block styles %}
+{{ block.super}}
+<link rel="stylesheet" href="{% static 'css/test.css' %}">
+{% endblock %}
+
+{% block content %}
+<div class="box">
+    <p class="signin">Add a project</p>
+    <input name="user" type="text" placeholder="Username or Email">
+    <br/>
+    <input name="pass" type="password" placeholder="Password" required>
+    <button>Sign In</button>
+    <p class="foot-txt">Forgot your password?</p>
+    <p class="foot-txt">Not a memeber? <span class="bold">Sign up now</p>
+  </div>
+{% endblock %}
