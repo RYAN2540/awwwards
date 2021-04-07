@@ -25,7 +25,7 @@ class Profile(models.Model):
 
 class Project(models.Model):
     name = models.CharField(max_length = 30)
-    screenshot = CloudinaryField('image')
+    screenshot = CloudinaryField('Project screenshot')
     description = models.TextField()
     link = models.URLField()
     profile = models.ForeignKey(Profile, on_delete=models.CASCADE)
