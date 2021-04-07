@@ -1,3 +1,5 @@
+@import 'https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css';
+@import 'https://fonts.googleapis.com/css?family=Roboto:700,400';
 body {
     padding-top: 7.2rem;
 }
@@ -18,18 +20,14 @@ body {
 	width: 100%;
 	height: 100%;
 	z-index: 1;
-    /* background: rgba(44, 42, 42, 0.6); */
-    /* background: rgba(0, 0, 0, 0.6); */
-    background: rgba(0, 0, 0, 0.678);
-    /* box-shadow: inset 120px 100px 250px #000000, inset -120px -100px 250px #000000; */
-    /* box-shadow: inset 20px 20px 100px #080808, inset -20px -20px 100px #080808; */
+    background: rgba(0, 0, 0, 0.575);
 }
 
 .of-the-day-wrapper-top{
     position: relative;
     z-index: 2;
 }
-.of-the-day-wrapper-middle {
+.of-the-day-wrapper-middle{
     position: absolute;
     top: 38%;
     left: 18%;
@@ -42,11 +40,47 @@ body {
 	text-align: center;
 	margin-top: -4rem;
 	font-weight: 700;
-	font-size: 4.8rem;
+	font-size: 4.5rem;
 	line-height: 1.1;
+    letter-spacing: 1px;
 	text-transform: capitalize;
 }
+.owner-info{
+    font-size: 1.2rem;
+    margin-top: 2rem;
+    text-transform: uppercase;
+}
 
+.d-flex{
+    display: flex;
+    justify-content: center;
+    align-content: center;
+}
+#average, .design ,.usability ,.d-flex > .content{
+    width: 9rem;
+    height: 9rem;
+    font-size: 3rem;
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+    border: 4px solid darkgoldenrod;
+    border-radius: 50%;
+    margin: 2rem;
+}
+#average{
+    border: 0px;
+    background: #444;
+    color: darkgoldenrod;
+}
+.d-flex span{
+    font-size: 1.4rem;
+    padding-top: 0.8rem;
+}
+.of-the-day-wrapper-middle-bottom{
+    position: absolute;
+    top: 40%;
+    left: 18%;
+}
 .of-the-day-wrapper-bottom{
     position: absolute;
     bottom: 2rem;
@@ -61,9 +95,8 @@ label {
     font-size: 1.3rem;
     font-weight: 900;
     color: #FFF;
-    /* border: 1px solid rgba(255, 255, 255, 0.5); */
     min-width: 2.3rem;
-    letter-spacing: 0.2rem;
+    letter-spacing: 0.1rem;
     line-height: 3rem;
     text-align: center;
     border-radius: 5rem;
@@ -87,11 +120,12 @@ label>span {
 }
 
 .voters img {
-    width: 5rem;
-    height: 5rem;
+    width: 4.5rem;
+    height: 4.5rem;
     margin-right: 1.2rem;
-    /* line-height: 5rem; */
     border-radius: 50%;
+    z-index: 2;
+    object-fit: cover;
 }
 
 @media (max-width: 425px) {
@@ -103,7 +137,7 @@ label>span {
 
 /* DIVIDER */
 .divider{
-    padding: 3%;
+    padding: 5% 3% 3%;
     font-size: 2.5rem;
     font-weight: 900;
 }
@@ -112,7 +146,7 @@ label>span {
     font-weight: 600;
     margin-left: 1%;
 }
-
+/* SEARCH PAGE */
 .search-title{
     font-size: 3rem;
     font-weight: 900;
@@ -132,8 +166,6 @@ label>span {
     padding-bottom: 2%;
 }
 /* SUBMISSIONS */
-@import 'https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css';
-@import 'https://fonts.googleapis.com/css?family=Roboto:700,400';
 .submissions-wrapper {
     padding-left: 5%;
     padding-right: 5%;
@@ -151,10 +183,6 @@ a:hover {
 h3 {
     line-height: 1.2;
     margin-bottom: 1.6rem;
-}
-
-.d-flex {
-    display: flex;
 }
 
 .submission {
@@ -255,6 +283,7 @@ h3 {
 .card__author-content {
     display: inline-block;
     vertical-align: middle;
+    text-transform: capitalize;
 }
 
 .card__author img {

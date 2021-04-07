@@ -79,9 +79,9 @@ class Vote(models.Model):
     post_date = models.DateTimeField(auto_now_add=True)
     project = models.ForeignKey(Project, on_delete= models.CASCADE, related_name = "votes")
     voter = models.ForeignKey(Profile, on_delete=models.CASCADE)
-    design = fields.IntegerRangeField(min_value=1, max_value=10)
-    usability = fields.IntegerRangeField(min_value=1, max_value=10)
-    content = fields.IntegerRangeField(min_value=1, max_value=10)
+    design = IntegerRangeField(min_value=1, max_value=10)
+    usability = IntegerRangeField(min_value=1, max_value=10)
+    content = IntegerRangeField(min_value=1, max_value=10)
     
     def save_vote(self):
         self.save()
