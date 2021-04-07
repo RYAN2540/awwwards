@@ -10,8 +10,8 @@ def profile(request):
     return render(request, "user/profile.html")
 
 def project(request):
-
-    return render(request, "project/project.html")
+    form = RateProjectForm()
+    return render(request, 'project/project.html', {"form": form})
 
 def add_project(request):
     if request.method == "POST":
@@ -32,8 +32,6 @@ def add_project(request):
     return render(request, 'project/add_project.html', {"form": form})
 
 def rate_project(request,id):
-    # form = RateProjectForm()
-    # return render(request, 'project/add_project.html', {"form": form})
     project = Project.objects.get(pk = id)
     if request.method == "POST":
         form = RateProjectForm(request.POST)

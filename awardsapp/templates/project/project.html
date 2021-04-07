@@ -8,32 +8,51 @@
 
 {% block content %}
 <div class="image">
-    <img src="https://images.unsplash.com/photo-1525543907410-b2562b6796d6?ixlib=rb-0.3.5&s=9ff8e5e718a6a40cbd0e1471235912f4&auto=format&fit=crop&w=3452&q=80" alt="...">
+    <img src="https://images.unsplash.com/photo-1525543907410-b2562b6796d6?ixlib=rb-0.3.5&s=9ff8e5e718a6a40cbd0e1471235912f4&auto=format&fit=crop&w=3452&q=80"
+        alt="...">
 </div>
-<div class="vote text-center" onclick="showRateForm()">Vote now</div>
-<div id="rate-form">
+<div class="vote text-center">Rate project now</div>
 
-</div>
 <div class="details text-center">
     <div class="title">Hellboy - Join the B.P.R.D</div>
-    <div class="description">Join Hellboy at the B.P.R.D.! In this mobile exclusive experience, browse the agency’s secret archives and apply for an internship with Hellboy himself. Do you have what it takes?</div>
+    <div class="description">Join Hellboy at the B.P.R.D.! In this mobile exclusive experience, browse the agency’s 
+        secret archives and apply for an internship with Hellboy himself. Do you have what it takes?</div>
     <div class="badges text-center">
         <label>
-			53 <span>awards</span>
+            53 <span>awards</span>
         </label>
         <label>
-			69 <span>projects</span>
+            69 <span>projects</span>
         </label>
     </div>
-    <hr>
     <div class="tabs">
-
+        <div class="tablinks" onclick="openTab(event, 'Votes')" id="defaultOpen">Votes</div>
+        <div class="tablinks" onclick="openTab(event, 'Rate')">London</div>
+        <div class="tablinks">Paris</div>
+    </div>
+    <hr>
+    <div id="Votes" class="tabcontent">
+        <h3>London</h3>
+        <p>London is the capital city of England.</p>
+    </div>
+    <div id="Rate" class="tabcontent">
+        <div id="rate-form">
+            <div class="text-center">
+                <div class="title">Rate project</div>
+                <hr>
+                <div class="guide">Add a project by providing the project name, project screenshot, a short description
+                    of the
+                    project and finally a live link to the site.</div>
+            </div>
+            <form action="{%url 'rate_project' 1%}" method="post">
+                {%csrf_token%}
+                {% bootstrap_form form%}
+                <input type="submit" class="btn btn-dark " value=" Rate Project">
+                <br>
+            </form>
+        </div>
     </div>
 </div>
-{% block scripts %}
-{{ block.super}}
-  <script src=" {% static 'js/home.js' %}"></script>
-  {% endblock %}
 <!-- <div class="row">
     <div class="col-md-2"></div>
     <div class="col-">
@@ -55,4 +74,8 @@
     <div class="col-md-2"></div>
     </div>
 </div> -->
+{% endblock %}
+{% block scripts %}
+{{ block.super}}
+<script src=" {% static 'js/home.js' %}"></script>
 {% endblock %}
