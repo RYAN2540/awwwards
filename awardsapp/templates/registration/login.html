@@ -1,0 +1,28 @@
+{%extends "registration/base.html"%}
+{% load static %}
+{%load bootstrap3 %}
+{% block content %}
+<div class="container">
+    <div class="welcome">
+      <div class="pinkbox">
+        <div id="signin">
+          <h1>sign in</h1>
+          <form action="/accounts/login/" method="post" class="more-padding" autocomplete="off">
+            {% csrf_token %}
+            {% bootstrap_form form%}
+            <button class="button submit" type="submit">Login</button>
+        </form>
+        </div>
+      </div>      
+      <div class="rightbox">
+        <h2 class="title"><span>BLOOM</span>&<br>BOUQUET</h2>
+        <p class="desc"> pick your perfect <span>bouquet</span></p>
+        <img class="flower" src="https://preview.ibb.co/jvu2Un/0057c1c1bab51a0.jpg"/>
+        <p class="account">don't have an account?</p>
+        <a href="/accounts/register/"><button class="button signup">sign up</button></a>
+      </div>
+    </div>
+   </div>
+
+  </div>
+{% endblock %}

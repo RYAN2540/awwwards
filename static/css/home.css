@@ -116,6 +116,17 @@ label>span {
     font-weight: 600;
 }
 
+.search-title{
+    font-size: 3rem;
+    font-weight: 900;
+    margin-top: 3%;
+    margin-bottom: 3%;
+    text-align: center;
+}
+.search-title span{
+    text-transform: uppercase;
+    text-decoration: underline darkgoldenrod;
+}
 
 /* SUBMISSIONS */
 @import 'https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css';
@@ -126,7 +137,8 @@ label>span {
 }
 a {
     text-decoration: none;
-    color: #3498db;
+    color: darkgoldenrod;
+    font-weight: 800;
 }
 
 a:hover {
@@ -257,7 +269,7 @@ h3 {
     background-color: #fff;
     transition: all 0.3s ease;
     outline: 0;
-
+    font-size: 1.5rem;
     box-shadow:
         0 2px 4px rgba(0, 0, 0, 0.12),
         0 2px 4px rgba(0, 0, 0, 0.24);

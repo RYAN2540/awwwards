@@ -1,0 +1,101 @@
+{%extends 'base.html'%}
+{% load static %}
+{% block styles %}
+{{ block.super}}
+<link rel="stylesheet" href="{% static 'css/home.css' %}">
+{% endblock %}
+
+{% block content %}
+<div class="search-title">
+    Found 2 projects titled <span>{{message}}</span>
+</div>
+<div class="submissions-wrapper">
+	<div class="col-sm-6 col-md-4">
+		<div class="card radius shadowDepth1">
+			<div class="card__image border-tlr-radius">
+				<img src="https://images.unsplash.com/photo-1525543907410-b2562b6796d6?ixlib=rb-0.3.5&s=9ff8e5e718a6a40cbd0e1471235912f4&auto=format&fit=crop&w=3452&q=80"
+					alt="image" class="border-tlr-radius">
+			</div>
+			<div class="card__content card__padding">
+				<div class="card__share">
+					<a id="share" class="share-icon" href="#"><i class="fas fa-share"></i></a>
+				</div>
+				<div class="card__meta">
+					<a href="#">Web Design</a>
+					<time>17th March</time>
+				</div>
+				<article class="card__article">
+					<h3><a href="#">Material Design Card</a></h3>
+					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ducimus harum...</p>
+				</article>
+			</div>
+			<div class="card__action">
+				<div class="card__author">
+					<img src="http://lorempixel.com/40/40/sports/" alt="user">
+					<div class="card__author-content">
+						By <a href="#">John Doe</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="col-sm-6 col-md-4">
+		<div class="card radius shadowDepth1">
+			<div class="card__image border-tlr-radius">
+				<img src="https://images.unsplash.com/photo-1525543907410-b2562b6796d6?ixlib=rb-0.3.5&s=9ff8e5e718a6a40cbd0e1471235912f4&auto=format&fit=crop&w=3452&q=80"
+					alt="image" class="border-tlr-radius">
+			</div>
+			<div class="card__content card__padding">
+				<div class="card__share">
+					<a id="share" class="share-icon" href="#"><i class="fas fa-share"></i></a>
+				</div>
+				<div class="card__meta">
+					<a href="#">Web Design</a>
+					<time>17th March</time>
+				</div>
+				<article class="card__article">
+					<h3><a href="#">Material Design Card</a></h3>
+					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ducimus harum...</p>
+				</article>
+			</div>
+			<div class="card__action">
+				<div class="card__author">
+					<img src="http://lorempixel.com/40/40/sports/" alt="user">
+					<div class="card__author-content">
+						By <a href="#">John Doe</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="col-sm-6 col-md-4">
+		<div class="card radius shadowDepth1">
+			<div class="card__image border-tlr-radius">
+				<img src="https://images.unsplash.com/photo-1525543907410-b2562b6796d6?ixlib=rb-0.3.5&s=9ff8e5e718a6a40cbd0e1471235912f4&auto=format&fit=crop&w=3452&q=80"
+					alt="image" class="border-tlr-radius">
+			</div>
+			<div class="card__content card__padding">
+				<div class="card__share">
+					<a id="share" class="share-icon" href="#"><i class="fas fa-share"></i></a>
+				</div>
+				<div class="card__meta">
+					<a href="#">Web Design</a>
+					<time>17th March</time>
+				</div>
+				<article class="card__article">
+					<h3><a href="#">Material Design Card</a></h3>
+					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ducimus harum...</p>
+				</article>
+			</div>
+			<div class="card__action">
+				<div class="card__author">
+					<img src="http://lorempixel.com/40/40/sports/" alt="user">
+					<div class="card__author-content">
+						By <a href="#">John Doe</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div> 
+{% endblock %}

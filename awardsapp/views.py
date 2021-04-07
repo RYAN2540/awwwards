@@ -1,6 +1,9 @@
 import datetime as dt
-from django.shortcuts import render
+from django.shortcuts import render,redirect
+from django.contrib.auth.decorators import login_required
 from .forms import AddProjectForm, RateProjectForm, CreateProfileForm
+from .email import send_signup_email
+from .models import Profile, Project
 
 def create_profile(request):
     current_user = request.user
@@ -23,9 +26,10 @@ def email(request):
     send_signup_email(name, email)
     return redirect(create_profile)
 
+@login_required(login_url='/accounts/login/')
 def home(request):
     date = dt.date.today()
-    return render(request, "user/profile.html", {"date": date})
+    return render(request, "home.html", {"date": date})
 
 def profile(request):
     return render(request, "user/profile.html")
