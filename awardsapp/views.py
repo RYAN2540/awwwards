@@ -1,6 +1,20 @@
 import datetime as dt
 from django.shortcuts import render
-from .forms import AddProjectForm, RateProjectForm
+from .forms import AddProjectForm, RateProjectForm, CreateProfileForm
+
+def create_profile(request):
+    current_user = request.user
+    if request.method == 'POST':
+        form = CreateProfileForm(request.POST, request.FILES)
+        if form.is_valid():
+            profile = form.save(commit=False)
+            profile.user = current_user
+            profile.save()
+        return HttpResponseRedirect('/')
+
+    else:
+        form = CreateProfileForm()
+    return render(request, 'user/create_profile.html', {"form": form})
 
 def home(request):
     date = dt.date.today()
@@ -57,7 +71,7 @@ def rate_project(request,id):
         form = RateProjectForm()
     return render(request, 'project/project.html', {"form": form})
 
-def project_search(request):
+def search_project(request):
     if "project" in request.GET and request.GET["project"]:
         searched_project = request.GET.get("project")
         projects = Project.search_project(searched_project)
