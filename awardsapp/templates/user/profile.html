@@ -9,21 +9,23 @@
 <div class="profile">
 	<div class="profile-left"></div>
 	<div class="profile-center text-center">
-		<img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/567707/dog.png" alt="Doggo" class="profile-image">
-		<h3 class="username">Active Theory</h3>
-		<div class="text-muted location">United States - Los Angeles</div>
-		<div class="bio">Active Theory is a creative digital production studio with offices in Los Angeles and
-			Amsterdam. We make bold things for the big guys.</div>
+		<img src="{{profile.profile_pic.url}}" class="profile-image">
+        <a href="{{profile.link}}" target="_blank"><h3 class="username">{{profile.user.username}}&nbsp;<sup><i class="fas fa-share"></i></sup></h3></a>
+        <div class="text-muted location">{{profile.location}}</div>
+        <div class="bio">{{profile.bio}}</div>
 		<div class="email"><span><i class="fas fa-at"></i></span>&nbsp;&nbsp;ryandev8121@gmail.com</div>
 	</div>
 	<div class="profile-right">
-		<label><span>53</span> awards</label>
+		{%if average == 0%}
+		{%else%}
+		<label><span>{{average | floatformat:0}}</span> average score</label>
+		{% endif %}
 	</div>
 </div>
 <hr>
 <div class="count">
-	<div class="projects">65 Projects</div>
-	<div class="votes">0 Votes</div>
+	<div class="projects">{{count}} Projects</div>
+    <div class="votes">{{votes | floatformat:0}} Votes</div>
 </div>
 <div class="submissions-wrapper">
 	{% for project in projects %}

@@ -62,3 +62,31 @@ class Project(models.Model):
     @classmethod
     def get_user_projects(cls,profile):
         return cls.objects.filter(profile=profile)
+
+    class Meta:
+        ordering = ['-post_date']
+
+class Vote(models.Model):
+    post_date = models.DateTimeField(auto_now_add=True)
+    project = models.ForeignKey(Project, on_delete= models.CASCADE, related_name = "votes")
+    voter = models.ForeignKey(User, on_delete=models.CASCADE)
+    design = models.IntegerField(default=0)
+    usability = models.IntegerField(default=0)
+    content = models.IntegerField(default=0)
+
+    def save_vote(self):
+        self.save()
+
+    def delete_vote(self):
+        self.delete()
+
+    @classmethod
+    def get_project_votes(cls, project):
+        return cls.objects.filter(project = project)
+
+    @classmethod
+    def get_project_voters(cls, voter):
+        return cls.objects.filter(voter = voter)
+
+    class Meta:
+        ordering = ['-post_date']
