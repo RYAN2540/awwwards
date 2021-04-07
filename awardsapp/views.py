@@ -56,3 +56,13 @@ def rate_project(request,id):
     else:
         form = RateProjectForm()
     return render(request, 'project/project.html', {"form": form})
+
+def project_search(request):
+    if "project" in request.GET and request.GET["project"]:
+        searched_project = request.GET.get("project")
+        projects = Project.search_project(searched_project)
+        message =f"{searched_project}"
+        return render(request, 'project/search.html', {"projects": projects,"message": message})
+    else:
+        message = "You haven't searched for any term"
+        return render(request,'project/search.html', {"message": message})
