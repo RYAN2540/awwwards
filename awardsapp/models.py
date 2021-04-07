@@ -6,18 +6,18 @@ class Profile(models.Model):
     user = models.OneToOneField(User, on_delete = models.CASCADE)
     profile_pic = CloudinaryField('Profile Picture')
     bio =  models.TextField()
-    location = models.CharField(max_length = 60)
+    location = models.CharField(max_length = 40)
     email = models.EmailField()
-    portfolio_link = models.URLField()
+    link = models.URLField()
 
     def __str__(self):
         return self.user.username
-        
+
     def save_profile(self):
         self.save()
 
     def delete_profile(self):
-        self.delete() 
+        self.delete()
 
     def edit_bio(self, new_bio):
         self.bio = new_bio
@@ -66,14 +66,23 @@ class Project(models.Model):
     class Meta:
         ordering = ['-post_date']
 
+class IntegerRangeField(models.IntegerField):
+    def __init__(self, verbose_name=None, name=None, min_value=None, max_value=None, **kwargs):
+        self.min_value, self.max_value = min_value, max_value
+        models.IntegerField.__init__(self, verbose_name, name, **kwargs)
+    def formfield(self, **kwargs):
+        defaults = {'min_value': self.min_value, 'max_value':self.max_value}
+        defaults.update(kwargs)
+        return super(IntegerRangeField, self).formfield(**defaults)
+
 class Vote(models.Model):
     post_date = models.DateTimeField(auto_now_add=True)
     project = models.ForeignKey(Project, on_delete= models.CASCADE, related_name = "votes")
-    voter = models.ForeignKey(User, on_delete=models.CASCADE)
-    design = models.IntegerField(default=0)
-    usability = models.IntegerField(default=0)
-    content = models.IntegerField(default=0)
-
+    voter = models.ForeignKey(Profile, on_delete=models.CASCADE)
+    design = fields.IntegerRangeField(min_value=1, max_value=10)
+    usability = fields.IntegerRangeField(min_value=1, max_value=10)
+    content = fields.IntegerRangeField(min_value=1, max_value=10)
+    
     def save_vote(self):
         self.save()
 
