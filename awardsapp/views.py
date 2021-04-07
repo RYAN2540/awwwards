@@ -4,6 +4,7 @@ from django.contrib.auth.decorators import login_required
 from .forms import AddProjectForm, RateProjectForm, CreateProfileForm
 from .email import send_signup_email
 from .models import Profile, Project
+from django.core.exceptions import ObjectDoesNotExist
 
 def create_profile(request):
     current_user = request.user
@@ -85,9 +86,20 @@ def rate_project(request,id):
 def search_project(request):
     if "project" in request.GET and request.GET["project"]:
         searched_project = request.GET.get("project")
-        projects = Project.search_project(searched_project)
-        message =f"{searched_project}"
-        return render(request, 'project/search.html', {"projects": projects,"message": message})
+        try:
+            projects = Project.search_project(searched_project)
+            message =f"{searched_project}"
+            if len(projects) == 1:
+                project = projects[0]
+                form = RateProjectForm()
+                return render(request, 'project/project.html', {"form": form, "project": project})
+            return render(request, 'project/search.html', {"projects": projects,"message": message})
+        except ObjectDoesNotExist:
+            projects = Project.display_all_projects()
+            if len(projects)> 1:
+                suggestions = projects[:4]
+                message= f"Found NO projects titled {searched_project}"
+                return render(request, 'project/search.html', {"suggestions":suggestions,"message": message})
     else:
         message = "You haven't searched for any term"
         return render(request,'project/search.html', {"message": message})
