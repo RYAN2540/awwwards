@@ -2,115 +2,63 @@
 {% load static %}
 {% block styles %}
 {{ block.super}}
-<link rel="stylesheet" href="{% static 'css/test.css' %}">
+<link rel="stylesheet" href="{% static 'css/profile.css' %}">
 {% endblock %}
 
 {% block content %}
 <div class="profile">
-    <div class="profile-left"></div>
-    <div class="profile-center text-center">
-        <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/567707/dog.png" alt="Doggo" class="profile-image">
-        <h3 class="username">Active Theory</h3>
-        <div class="text-muted location">United States - Los Angeles</div>
-        <div class="bio">Active Theory is a creative digital production studio with offices in Los Angeles and Amsterdam. We make bold things for the big guys.</div>
-        <div class="email"><span><i class="fas fa-at"></i></span>&nbsp;&nbsp;ryandev8121@gmail.com</div>
-    </div>
-    <div class="profile-right">
-        <label><span>53</span> awards</label>
-    </div>
+	<div class="profile-left"></div>
+	<div class="profile-center text-center">
+		<img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/567707/dog.png" alt="Doggo" class="profile-image">
+		<h3 class="username">Active Theory</h3>
+		<div class="text-muted location">United States - Los Angeles</div>
+		<div class="bio">Active Theory is a creative digital production studio with offices in Los Angeles and
+			Amsterdam. We make bold things for the big guys.</div>
+		<div class="email"><span><i class="fas fa-at"></i></span>&nbsp;&nbsp;ryandev8121@gmail.com</div>
+	</div>
+	<div class="profile-right">
+		<label><span>53</span> awards</label>
+	</div>
 </div>
 <hr>
 <div class="count">
-    <div class="projects">65 Projects</div>
-    <div class="votes">0 Votes</div>
+	<div class="projects">65 Projects</div>
+	<div class="votes">0 Votes</div>
 </div>
 <div class="submissions-wrapper">
+	{% for project in projects %}
 	<div class="col-sm-6 col-md-4">
 		<div class="card radius shadowDepth1">
 			<div class="card__image border-tlr-radius">
-				<img src="https://images.unsplash.com/photo-1525543907410-b2562b6796d6?ixlib=rb-0.3.5&s=9ff8e5e718a6a40cbd0e1471235912f4&auto=format&fit=crop&w=3452&q=80"
-					alt="image" class="border-tlr-radius">
+				<img src="{{project.screenshot.url}}" alt="image" class="border-tlr-radius">
 			</div>
 			<div class="card__content card__padding">
 				<div class="card__share">
-					<a id="share" class="share-icon" href="#"><i class="fas fa-share"></i></a>
+					<a id="share" class="share-icon" href="{% url 'project' project.id %}"><i
+							class="fas fa-share"></i></a>
 				</div>
 				<div class="card__meta">
-					<a href="#">Web Design</a>
-					<time>17th March</time>
+					{%if project.average_score != 0.0 %}
+					<a href="#">{{project.average_score}}</a>
+					{%else%}
+					{% endif %}
+					<time>{{project.post_date}}</time>
 				</div>
 				<article class="card__article">
-					<h3><a href="#">Material Design Card</a></h3>
-					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ducimus harum...</p>
+					<h3><a href="#">{{project.name}}</a></h3>
+					<p>{{project.description}}</p>
 				</article>
 			</div>
 			<div class="card__action">
 				<div class="card__author">
-					<img src="http://lorempixel.com/40/40/sports/" alt="user">
+					<img src="{{project.profile.profile_pic.url}}" alt="user">
 					<div class="card__author-content">
-						By <a href="#">John Doe</a>
+						By <a href="#">{{project.profile.user.username}}</a>
 					</div>
 				</div>
 			</div>
 		</div>
 	</div>
-	<div class="col-sm-6 col-md-4">
-		<div class="card radius shadowDepth1">
-			<div class="card__image border-tlr-radius">
-				<img src="https://images.unsplash.com/photo-1525543907410-b2562b6796d6?ixlib=rb-0.3.5&s=9ff8e5e718a6a40cbd0e1471235912f4&auto=format&fit=crop&w=3452&q=80"
-					alt="image" class="border-tlr-radius">
-			</div>
-			<div class="card__content card__padding">
-				<div class="card__share">
-					<a id="share" class="share-icon" href="#"><i class="fas fa-share"></i></a>
-				</div>
-				<div class="card__meta">
-					<a href="#">Web Design</a>
-					<time>17th March</time>
-				</div>
-				<article class="card__article">
-					<h3><a href="#">Material Design Card</a></h3>
-					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ducimus harum...</p>
-				</article>
-			</div>
-			<div class="card__action">
-				<div class="card__author">
-					<img src="http://lorempixel.com/40/40/sports/" alt="user">
-					<div class="card__author-content">
-						By <a href="#">John Doe</a>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-	<div class="col-sm-6 col-md-4">
-		<div class="card radius shadowDepth1">
-			<div class="card__image border-tlr-radius">
-				<img src="https://images.unsplash.com/photo-1525543907410-b2562b6796d6?ixlib=rb-0.3.5&s=9ff8e5e718a6a40cbd0e1471235912f4&auto=format&fit=crop&w=3452&q=80"
-					alt="image" class="border-tlr-radius">
-			</div>
-			<div class="card__content card__padding">
-				<div class="card__share">
-					<a id="share" class="share-icon" href="#"><i class="fas fa-share"></i></a>
-				</div>
-				<div class="card__meta">
-					<a href="#">Web Design</a>
-					<time>17th March</time>
-				</div>
-				<article class="card__article">
-					<h3><a href="#">Material Design Card</a></h3>
-					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ducimus harum...</p>
-				</article>
-			</div>
-			<div class="card__action">
-				<div class="card__author">
-					<img src="http://lorempixel.com/40/40/sports/" alt="user">
-					<div class="card__author-content">
-						By <a href="#">John Doe</a>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
+	{% endfor %}
 </div>
 {% endblock %}

@@ -8,7 +8,7 @@
 {% block content %}
 {% if projects %}
 <div class="search-title">
-    Found 2 projects titled <span>{{message}}</span>
+	Found 2 projects titled <span>{{message}}</span>
 </div>
 <div class="submissions-wrapper">
 	<div class="col-sm-6 col-md-4">
@@ -101,97 +101,44 @@
 </div>
 {% else %}
 <div class="search-title">
-    Found NO projects titled <span>{{message}}</span>
+	Found NO projects titled <span>{{message}}</span>
 </div>
 <div class="suggestions-title">Here are other projects you can look at:</div>
 <div class="submissions-wrapper">
+	{% for project in projects %}
 	<div class="col-sm-6 col-md-4">
 		<div class="card radius shadowDepth1">
 			<div class="card__image border-tlr-radius">
-				<img src="https://images.unsplash.com/photo-1525543907410-b2562b6796d6?ixlib=rb-0.3.5&s=9ff8e5e718a6a40cbd0e1471235912f4&auto=format&fit=crop&w=3452&q=80"
-					alt="image" class="border-tlr-radius">
+				<img src="{{project.screenshot.url}}" alt="image" class="border-tlr-radius">
 			</div>
 			<div class="card__content card__padding">
 				<div class="card__share">
-					<a id="share" class="share-icon" href="#"><i class="fas fa-share"></i></a>
+					<a id="share" class="share-icon" href="{% url 'project' project.id %}"><i
+							class="fas fa-share"></i></a>
 				</div>
 				<div class="card__meta">
-					<a href="#">Web Design</a>
-					<time>17th March</time>
+					{%if project.average_score != 0.0 %}
+					<a href="#">{{project.average_score}}</a>
+					{%else%}
+					{% endif %}
+					<time>{{project.post_date}}</time>
 				</div>
 				<article class="card__article">
-					<h3><a href="#">Material Design Card</a></h3>
-					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ducimus harum...</p>
+					<h3><a href="#">{{project.name}}</a></h3>
+					<p>{{project.description}}</p>
 				</article>
 			</div>
 			<div class="card__action">
 				<div class="card__author">
-					<img src="http://lorempixel.com/40/40/sports/" alt="user">
+					<img src="{{project.profile.profile_pic.url}}" alt="user">
 					<div class="card__author-content">
-						By <a href="#">John Doe</a>
+						By <a href="#">{{project.profile.user.username}}</a>
 					</div>
 				</div>
 			</div>
 		</div>
 	</div>
-	<div class="col-sm-6 col-md-4">
-		<div class="card radius shadowDepth1">
-			<div class="card__image border-tlr-radius">
-				<img src="https://images.unsplash.com/photo-1525543907410-b2562b6796d6?ixlib=rb-0.3.5&s=9ff8e5e718a6a40cbd0e1471235912f4&auto=format&fit=crop&w=3452&q=80"
-					alt="image" class="border-tlr-radius">
-			</div>
-			<div class="card__content card__padding">
-				<div class="card__share">
-					<a id="share" class="share-icon" href="#"><i class="fas fa-share"></i></a>
-				</div>
-				<div class="card__meta">
-					<a href="#">Web Design</a>
-					<time>17th March</time>
-				</div>
-				<article class="card__article">
-					<h3><a href="#">Material Design Card</a></h3>
-					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ducimus harum...</p>
-				</article>
-			</div>
-			<div class="card__action">
-				<div class="card__author">
-					<img src="http://lorempixel.com/40/40/sports/" alt="user">
-					<div class="card__author-content">
-						By <a href="#">John Doe</a>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-	<div class="col-sm-6 col-md-4">
-		<div class="card radius shadowDepth1">
-			<div class="card__image border-tlr-radius">
-				<img src="https://images.unsplash.com/photo-1525543907410-b2562b6796d6?ixlib=rb-0.3.5&s=9ff8e5e718a6a40cbd0e1471235912f4&auto=format&fit=crop&w=3452&q=80"
-					alt="image" class="border-tlr-radius">
-			</div>
-			<div class="card__content card__padding">
-				<div class="card__share">
-					<a id="share" class="share-icon" href="#"><i class="fas fa-share"></i></a>
-				</div>
-				<div class="card__meta">
-					<a href="#">Web Design</a>
-					<time>17th March</time>
-				</div>
-				<article class="card__article">
-					<h3><a href="#">Material Design Card</a></h3>
-					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ducimus harum...</p>
-				</article>
-			</div>
-			<div class="card__action">
-				<div class="card__author">
-					<img src="http://lorempixel.com/40/40/sports/" alt="user">
-					<div class="card__author-content">
-						By <a href="#">John Doe</a>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-</div> 
-{% endif %} 
+	{% endfor %}
+</div>
+{% endif %}
 {% endblock %}

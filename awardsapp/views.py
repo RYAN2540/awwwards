@@ -5,6 +5,7 @@ from .forms import AddProjectForm, RateProjectForm, CreateProfileForm
 from .email import send_signup_email
 from .models import Profile, Project
 from django.core.exceptions import ObjectDoesNotExist
+from django.http import HttpResponseRedirect, Http404
 
 def create_profile(request):
     current_user = request.user
@@ -29,16 +30,21 @@ def email(request):
 
 @login_required(login_url='/accounts/login/')
 def home(request):
+    title= "awwwards"
     date = dt.date.today()
-    return render(request, "home.html", {"date": date})
+    projects = Project.display_all_projects()
+    projects_scores = projects.order_by('-average_score')
+    highest_score = projects_scores[0]
+    return render(request, "home.html", {"date": date, "title": title, "projects": projects, "highest":highest_score})
 
 def profile(request):
     return render(request, "user/profile.html")
 
-def project(request):
+def project(request, project_id):
     form = RateProjectForm()
     return render(request, 'project/project.html', {"form": form})
 
+@login_required(login_url='/accounts/login/')
 def add_project(request):
     if request.method == "POST":
         form = AddProjectForm(request.POST, request.FILES)
@@ -51,7 +57,6 @@ def add_project(request):
             project = form.save(commit= False)
             project.profile = profile
             project.save()
-
         return redirect("home")
     else:
         form = AddProjectForm()
