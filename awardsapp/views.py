@@ -16,6 +16,13 @@ def create_profile(request):
         form = CreateProfileForm()
     return render(request, 'user/create_profile.html', {"form": form})
 
+def email(request):
+    current_user = request.user
+    email = current_user.email
+    name = current_user.username
+    send_signup_email(name, email)
+    return redirect(create_profile)
+
 def home(request):
     date = dt.date.today()
     return render(request, "user/profile.html", {"date": date})
