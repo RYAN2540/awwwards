@@ -18,3 +18,7 @@ $(function () {
           }, 250);
       });
 });
+
+function showRateForm(){
+    $("#rate-form").show();
+}

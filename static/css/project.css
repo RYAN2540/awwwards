@@ -16,7 +16,9 @@ body {
     font-weight: 900;
     color: #fff;
 }
-
+#rate-form{
+    display: none;
+}
 .details {
     padding: 3%;
 }
