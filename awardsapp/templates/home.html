@@ -19,10 +19,10 @@
 				href="{% url 'profile' highest.profile.user.id %}">{{highest.profile.user.username}}</a> FROM BY
 			{{highest.profile.location}}</div>
 		<div class="d-flex">
-			<div id="average">{{highest.average_score}}<span>average</span></div>
-			<div class="design">{{highest.average_design}}<span>design</span></div>
-			<div class="usability">{{highest.average_usability}}<span>usability</span></div>
-			<div class="content">{{highest.average_content}}<span>content</span></div>
+			<div id="average">{{highest.average_score | floatformat:0}}<span>average</span></div>
+			<div class="design">{{highest.average_design | floatformat:0}}<span>design</span></div>
+			<div class="usability">{{highest.average_usability | floatformat:0}}<span>usability</span></div>
+			<div class="content">{{highest.average_content | floatformat:0}}<span>content</span></div>
 		</div>
 	</div>
 	<div class="of-the-day-wrapper-bottom">
@@ -52,7 +52,7 @@
 				</div>
 				<div class="card__meta">
 					{%if project.average_score != 0.0 %}
-					<a href="#">{{project.average_score}}</a>
+					<a href="#">{{project.average_score | floatformat:0}}</a>
 					{%else%}
 					{% endif %}
 					<time>{{project.post_date}}</time>

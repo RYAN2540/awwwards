@@ -22,10 +22,10 @@
     <div class="owner">BY <span><a href="{% url 'profile' project.profile.user.id %}">{{project.profile.user.username}}</a></span> FROM {{project.profile.location}}</div>
     <div class="description">{{project.description}}</div>
     <div class="d-flex">
-        <div id="average">{{project.average_score}}<span>average</span></div>
-        <div class="design">{{project.average_design}}<span>design</span></div>
-        <div class="usability">{{project.average_usability}}<span>usability</span></div>
-        <div class="content">{{project.average_content}}<span>content</span></div>
+        <div id="average">{{project.average_score | floatformat:0}}<span>average</span></div>
+        <div class="design">{{project.average_design | floatformat:0}}<span>design</span></div>
+        <div class="usability">{{project.average_usability | floatformat:0}}<span>usability</span></div>
+        <div class="content">{{project.average_content | floatformat:0}}<span>content</span></div>
     </div>
     <div class="tabs">
         <div class="tablinks" onclick="openTab(event, 'Votes')" id="defaultOpen">Votes</div>
@@ -33,13 +33,20 @@
     </div>
     <hr>
     <div id="Votes" class="tabcontent">
+        <div class="vote-titles">
+            <img src="" alt="voter" class="invisible">
+            <p class="voter-name"></p>
+            <p class="vote-title ">Content</p>
+            <p class="vote-title ">Design</p>
+            <p class="vote-title ">Usability</p>
+        </div>
         {% for vote in votes%}
         <div class="vote-details">
             <img src="{{vote.voter.profile_pic.url}}" alt="voter" class="voter-image">
             <p class="voter-name">{{vote.voter.user.username}}</p>
-            <p class="content-vote">{{vote.content}}</p>
-            <p class="design-vote">{{vote.design}}</p>
-            <p class="usability-vote">{{vote.usability}}</p>
+            <p class="content-vote">{{vote.content | floatformat:0}}</p>
+            <p class="design-vote">{{vote.design | floatformat:0}}</p>
+            <p class="usability-vote">{{vote.usability | floatformat:0}}</p>
         </div>
         {% endfor %}
     </div>

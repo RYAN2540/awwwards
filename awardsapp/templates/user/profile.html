@@ -24,20 +24,23 @@
 </div>
 <hr>
 <div class="count">
+	{%if count == 1 %}
+	<div class="projects">{{count}} Project</div>
+	{%else%}
 	<div class="projects">{{count}} Projects</div>
-    <div class="votes">{{votes | floatformat:0}} Votes</div>
+	{%endif%}
 </div>
 <div class="submissions-wrapper">
 	{% for project in projects %}
-	<div class="col-sm-6 col-md-4">
+	<div class="col-md-4">
 		<div class="card radius shadowDepth1">
 			<div class="card__image border-tlr-radius">
-				<img src="{{project.screenshot.url}}" alt="image" class="border-tlr-radius">
+				<a href="{% url 'project' project.id %}"><img src="{{project.screenshot.url}}"
+					alt="image" class="border-tlr-radius"></a>
 			</div>
 			<div class="card__content card__padding">
 				<div class="card__share">
-					<a id="share" class="share-icon" href="{% url 'project' project.id %}"><i
-							class="fas fa-share"></i></a>
+					<a id="share" class="share-icon" href="{{project.link}}" target="_blank"><i class="fas fa-share"></i></a>
 				</div>
 				<div class="card__meta">
 					{%if project.average_score != 0.0 %}
@@ -47,7 +50,7 @@
 					<time>{{project.post_date}}</time>
 				</div>
 				<article class="card__article">
-					<h3><a href="#">{{project.name}}</a></h3>
+					<h3><a href="{% url 'project' project.id %}">{{project.name}}</a></h3>
 					<p>{{project.description}}</p>
 				</article>
 			</div>
@@ -55,7 +58,7 @@
 				<div class="card__author">
 					<img src="{{project.profile.profile_pic.url}}" alt="user">
 					<div class="card__author-content">
-						By <a href="#">{{project.profile.user.username}}</a>
+						By <a href="{% url 'profile' project.profile.user.id %}">{{project.profile.user.username}}</a>
 					</div>
 				</div>
 			</div>

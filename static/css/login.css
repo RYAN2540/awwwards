@@ -1,7 +1,9 @@
 @import url('https://fonts.googleapis.com/css?family=Open+Sans:300,400|Lora');
-body{
+
+body {
     overflow-x: hidden !important;
 }
+
 /* div box styling */
 .container {
     margin: auto;
@@ -32,7 +34,8 @@ body{
     transition: all 0.5s ease-in-out;
     z-index: 2;
 }
-.signupbox{
+
+.signupbox {
     position: absolute;
     top: -15%;
     left: 5%;
@@ -75,18 +78,38 @@ h1 {
     letter-spacing: 8px;
 }
 
-.title {
+.logo-wrap {
     color: #8e9aaf;
     font-size: 1.8em;
     line-height: 1.1em;
     letter-spacing: 3px;
     text-align: center;
-    font-weight: 300;
+    font-weight: 900;
     margin-top: 20%;
 }
-
-.desc {
-    margin-top: -8px;
+/* .logo-wrap {
+	position: absolute;
+	display:block;
+	right:0;
+	top: 4rem;
+	cursor: pointer;
+} */
+.logo-wrap a {
+	/* cursor: pointer; */
+	/* font-weight: 900;
+	font-size: 1.8em;
+	line-height: 2rem; */
+	text-transform: lowercase;
+	letter-spacing: 0.2rem;
+	color: #444;
+	transition : all 0.3s ease-out;
+}
+.logo-wrap a span{ 
+    color: darkgoldenrod;
+    text-transform: uppercase;
+}
+.logo-wrap a:hover {
+	opacity: 0.9;
 }
 
 .account {
@@ -94,24 +117,12 @@ h1 {
     font-size: 10px;
 }
 
-p {
-
-    font-size: 0.7em;
-    letter-spacing: 2px;
-    color: #8e9aaf;
-    text-align: center;
-}
-
-span {
-    color: #444;
-}
-
-.flower {
+.award {
     position: absolute;
     width: 120px;
     height: 120px;
     top: 46%;
-    left: 29%;
+    text-align: center;
     opacity: 0.7;
 }
 
@@ -150,22 +161,26 @@ button {
     background: darkgoldenrod;
 }
 
-.signup, .signin {
+.signup,
+.signin {
     background: #444;
     color: #f6f6f6;
     transition: background-color 0.5s ease-out;
     border: 0;
 }
 
-.signup:hover, .signin:hover {
+.signup:hover,
+.signin:hover {
     background: #f6f6f6;
     color: #f6f6f6;
     border: solid 1px #f6f6f6;
     background: darkgoldenrod;
 }
-a:hover{
+
+a:hover {
     text-decoration: none;
 }
+
 /* form styling */
 form {
     display: flex;
@@ -217,22 +232,43 @@ input:focus::placeholder {
     opacity: 0;
 }
 
-.has-success>label, label {
+.has-success>label,
+label {
     color: #f6f6f6 !important;
     font-size: 1.3rem;
     font-weight: 800;
     letter-spacing: 1px;
 }
-.has-success>.form-control{
+
+.has-success>.form-control {
     border-bottom: 1px solid rgba(246, 246, 246, 0.5);
 }
-.form-group>.help-block{
+
+.form-group>.help-block {
     display: none;
 }
 
-.error>label{
+.error>label {
     color: red !important;
 }
-.error>.form-control{
+
+.error>.form-control {
     border-bottom: 1.2px solid red;
+}
+
+@media (max-width: 425px) {
+    .container {
+        margin: auto;
+        width: 100% !important;
+        height: 100vh;
+        position: relative;
+    }
+
+    .leftbox,
+    .rightbox {
+        display: none !important;
+    }
+    .signupbox, .signinbox{
+        width: 98% !important;
+    }
 }

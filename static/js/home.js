@@ -3,12 +3,14 @@
   $(this).toggleClass('nav-open');
   $(".menu").toggleClass("active");
 });
+
 /*LOGIN/SIGNUP ANIMATION */
 $(document).ready(function(){
   $('.signupbox').css('transform', 'translateX(80%)');
   $('.signinbox').css('transform', 'translateX(0%)');
 });
 
+/*PROJECT TABS */
 function openTab(evt, tabName) {
     var i, tabcontent, tablinks;
     tabcontent = document.getElementsByClassName("tabcontent");

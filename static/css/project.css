@@ -148,11 +148,20 @@ body {
     align-content: center;
     padding: 0 20%;
 }
-.vote-details{
+.vote-details, .vote-titles{
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-content: center;
+    padding-bottom: 3rem;
+}
+
+.invisible{
+    visibility: hidden;
+}
+.vote-title{
+    font-size:1.4rem ;
+    margin-right: -4rem;
 }
 .voter-image{
     width: 5rem;
@@ -167,6 +176,9 @@ body {
 }
 .voter-name, .content-vote, .design-vote, .usability-vote{
     align-self: center;
+}
+.content-vote, .design-vote, .usability-vote{
+    font-size: 2rem;
 }
 #Rate {
     margin: 0 25%;
