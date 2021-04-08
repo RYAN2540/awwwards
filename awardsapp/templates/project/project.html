@@ -10,13 +10,13 @@
 <div class="image">
     <img src="{{project.screenshot.url}}" alt="...">
 </div>
+
 {% if voted %}
 {% else %}
 <a href="#rate-form" onclick="openTab(event, 'Rate')">
     <div class="vote text-center">Rate project now</div>
 </a>
 {% endif %}
-
 <div class="details text-center">
     <div class="title"><a href="{{project.link}}" target="_blank">{{project.name}}&nbsp;<sup><i class="fas fa-share" style="font-size: 1.9rem;"></i></sup></a></div>
     <div class="owner">BY <span><a href="{% url 'profile' project.profile.user.id %}">{{project.profile.user.username}}</a></span> FROM {{project.profile.location}}</div>
@@ -33,6 +33,7 @@
     </div>
     <hr>
     <div id="Votes" class="tabcontent">
+        {% if votes %}
         <div class="vote-titles">
             <img src="" alt="voter" class="invisible">
             <p class="voter-name"></p>
@@ -49,6 +50,9 @@
             <p class="usability-vote">{{vote.usability | floatformat:0}}</p>
         </div>
         {% endfor %}
+        {% else %}
+        <div class="text-center have-already">No votes yet</div>
+        {% endif %}
     </div>
     <div id="Rate" class="tabcontent">
         {% if voted %}

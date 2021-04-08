@@ -40,7 +40,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'awardsapp',
-    'bootstrap4',
+    'bootstrap3',
     'cloudinary',
     'rest_framework',
 ]
