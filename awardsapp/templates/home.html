@@ -6,7 +6,7 @@
 {% endblock %}
 
 {% block content %}
-
+{% if highest %}
 <div class="of-the-day-wrapper" style="background-image: url('{{highest.screenshot.url}}');">
 	<div class="of-the-day-wrapper-top">
 		<label>
@@ -31,7 +31,7 @@
 		</div>
 	</div>
 </div>
-
+{%endif%}
 
 <div class="text-left divider">
 	Submissions | <span> We need your vote</span>

@@ -3,7 +3,7 @@ from django.template.loader import render_to_string
 
 def send_signup_email(name,receiver):
     # Creating message subject and sender
-    subject = 'Instagram account created.'
+    subject = 'Awwwards account created.'
     sender = 'ryandev8121@gmail.com'
 
     #passing in the context vairables

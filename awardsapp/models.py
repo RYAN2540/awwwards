@@ -29,6 +29,7 @@ class Project(models.Model):
     description = models.TextField()
     link = models.URLField()
     profile = models.ForeignKey(Profile, on_delete=models.CASCADE)
+    voters = models.IntegerField(default=0)
     post_date = models.DateTimeField(auto_now_add=True, null = True)
     average_design = models.FloatField(default=0,)
     average_usability = models.FloatField(default=0)
@@ -95,3 +96,4 @@ class Vote(models.Model):
 
     class Meta:
         ordering = ['-post_date']
+
