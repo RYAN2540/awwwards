@@ -91,7 +91,7 @@ def project(request, project_id):
         design_list.append(vote.design)
         usability_list.append(vote.usability)
     voted = False
-    if request.user.id-1 in voters_list or request.user.id == project.profile.id:
+    if request.user.id in voters_list or request.user.id == project.profile.id:
         voted = True
     else:
         voted = False
@@ -174,7 +174,7 @@ def search_project(request):
                 for vote in votes:
                     voters_list.append(vote.voter.id)
                 voted = True
-                if request.user.id-1 in voters_list or request.user.id == project.profile.user.id:
+                if request.user.id in voters_list or request.user.id == project.profile.user.id:
                     voted = False
                 else:
                     voted = True
