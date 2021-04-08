@@ -8,7 +8,7 @@
 Awwwards is a platform that allows users to submit their projects/applications to be rated based on design, usability and content.
 
 ## Live link
-Visit the application on  .
+Visit the application on  https://awards-ryan.herokuapp.com/.
 
 ## Development
 To make advancements/modifications, follow these steps:
